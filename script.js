@@ -7,6 +7,15 @@ const diagnosticResult = document.querySelector("[data-diagnostic-result]");
 const diagnosticLink = document.querySelector("[data-diagnostic-link]");
 const diagnosticOptions = document.querySelectorAll("[data-diagnostic]");
 const fields = ["name", "phone", "topic", "consent"];
+const company = document.querySelector("#company");
+
+// 회사명은 선택 항목입니다. 이전 페이지가 캐시되어도 필수 검증이 남지 않게 명시적으로 해제합니다.
+if (form) form.noValidate = true;
+if (company) {
+  company.required = false;
+  company.removeAttribute("required");
+  company.setCustomValidity("");
+}
 
 function selectDiagnostic(option) {
   diagnosticOptions.forEach((item) => item.classList.toggle("is-active", item === option));
