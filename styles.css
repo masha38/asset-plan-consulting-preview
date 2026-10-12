@@ -30,9 +30,9 @@ button, input, select { font: inherit; } button { color: inherit; }
 .ornament-one { width: 720px; height: 720px; right: -330px; top: 14px; }
 .ornament-two { width: 390px; height: 390px; left: -265px; bottom: 32px; border-color: rgba(255,255,255,.07); }
 .hero-inner { position: relative; z-index: 1; width: min(calc(100% - 48px), var(--max-width)); min-height: 662px; margin: 0 auto; padding: 76px 0 68px; display: grid; grid-template-columns: minmax(0,1fr) 370px; align-items: center; gap: 70px; }
-.hero-copy { min-width: 0; width: 100%; max-width: 720px; padding: 0; }
+.hero-copy { min-width: 0; width: 100%; max-width: 720px; padding: 0; transform: translateY(-20px); }
 .eyebrow, .section-label { margin: 0 0 22px; color: var(--gold); font-size: 13px; font-weight: 850; letter-spacing: .17em; }
-.hero h1 { margin: 0; font-size: clamp(47px,4.25vw,60px); line-height: 1.14; letter-spacing: -.06em; }
+.hero h1 { margin: 0; font-size: clamp(50px,4.45vw,64px); line-height: 1.2; letter-spacing: -.055em; }
 .hero h1 em { color: var(--gold-light); font-style: normal; }
 .hero-description { margin: 30px 0 38px; color: #bdc7d4; font-size: 20px; line-height: 1.72; }
 .hero-actions { display: flex; align-items: center; gap: 27px; }
@@ -142,7 +142,7 @@ form { margin-top: 34px; }
 @media (max-width: 1024px) {
   .desktop-nav { display: none; } .header-inner { grid-template-columns: 1fr auto; }
   .hero-inner { grid-template-columns: minmax(0,1fr) 350px; gap: 36px; }
-  .hero h1 { font-size: 46px; } .diagnosis-layout, .contact { gap: 38px; } .solutions-heading { gap: 40px; }
+  .hero h1 { font-size: 50px; } .diagnosis-layout, .contact { gap: 38px; } .solutions-heading { gap: 40px; }
 }
 @media (max-width: 767px) {
   body { padding-bottom: 76px; } .site-header { height: 46px; }
@@ -152,7 +152,7 @@ form { margin-top: 34px; }
   .header-cta { display: none; }
   .hero { min-height: auto; padding-top: 0; }
   .hero-inner { width: min(calc(100% - 32px),var(--max-width)); min-height: auto; padding: 59px 0 42px; grid-template-columns: 1fr; gap: 42px; }
-  .hero h1 { font-size: clamp(40px,10.8vw,48px); line-height: 1.18; }
+  .hero h1 { font-size: clamp(42px,11vw,49px); line-height: 1.24; }
   .hero-description { margin: 23px 0 29px; font-size: 18px; } .desktop-break { display: none; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; } .button { width: 100%; }
   .diagnostic-card { padding: 20px; }
@@ -220,8 +220,8 @@ form { margin-top: 34px; }
 @media (max-width: 767px) {
   .hero::before { width: 78vw; background-position: center 50%; opacity: .4; -webkit-mask-image: linear-gradient(90deg,transparent 0,rgba(0,0,0,.2) 4%,rgba(0,0,0,.64) 12%,#000 20%,#000 80%,rgba(0,0,0,.64) 88%,rgba(0,0,0,.2) 96%,transparent 100%); mask-image: linear-gradient(90deg,transparent 0,rgba(0,0,0,.2) 4%,rgba(0,0,0,.64) 12%,#000 20%,#000 80%,rgba(0,0,0,.64) 88%,rgba(0,0,0,.2) 96%,transparent 100%); }
   .hero::after { background: rgba(6,20,38,.76); }
-  .hero-copy { padding: 0; }
-  .hero h1 { font-size: clamp(38px,10vw,43px); overflow-wrap: break-word; }
+  .hero-copy { padding: 0; transform: translateY(-10px); }
+  .hero h1 { font-size: clamp(42px,11vw,49px); overflow-wrap: break-word; }
   .hero h1 br { display: none; }
   .diagnostic-option { grid-template-columns: 32px minmax(0,1fr) 22px; }
   .hero-foot { padding: 24px 20px; }
