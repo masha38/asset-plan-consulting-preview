@@ -43,7 +43,7 @@ button, input, select { font: inherit; } button { color: inherit; }
 .text-link { color: #e2e7ed; font-size: 15px; font-weight: 750; }
 .text-link span { margin-left: 8px; color: var(--gold); }
 
-.diagnostic-card { position: relative; min-width: 0; width: 100%; overflow: hidden; padding: 27px; border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); background: var(--navy-900); box-shadow: 0 35px 90px rgba(0,0,0,.27); }
+.diagnostic-card { position: relative; min-width: 0; width: 100%; overflow: hidden; padding: 27px; border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius); background: var(--navy-900); box-shadow: 0 35px 90px rgba(0,0,0,.27); transform: translateY(-20px); }
 .diagnostic-card::after { content: ""; position: absolute; width: 150px; height: 150px; right: -90px; top: -90px; border: 1px solid rgba(216,173,88,.4); border-radius: 50%; }
 .diagnostic-head { display: flex; gap: 12px; align-items: flex-start; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .live-dot { width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 5px rgba(216,173,88,.12); }
@@ -155,7 +155,7 @@ form { margin-top: 34px; }
   .hero h1 { font-size: clamp(42px,11vw,49px); line-height: 1.24; }
   .hero-description { margin: 23px 0 29px; font-size: 18px; } .desktop-break { display: none; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; } .button { width: 100%; }
-  .diagnostic-card { padding: 20px; }
+  .diagnostic-card { padding: 20px; transform: none; }
   .hero-foot { width: min(calc(100% - 32px),var(--max-width)); min-height: 130px; padding: 23px 0; grid-template-columns: 1fr; gap: 7px; }
   .hero-foot p { font-size: 15px; } .hero-foot strong { font-size: 16px; }
   .section-shell { width: min(calc(100% - 32px),var(--max-width)); padding: 86px 0; }
