@@ -89,22 +89,19 @@ button, input, select { font: inherit; } button { color: inherit; }
 .section-label-light { color: var(--gold); }
 .solutions-heading > div .section-label { margin-bottom: 17px; }
 .solutions-heading > p { max-width: 520px; margin: 0 0 7px; color: #aebbc9; font-size: 18px; }
-.solutions-grid { margin-top: 65px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 20px; align-items: stretch; }
-.solution-primary { padding: 38px; display: flex; flex-direction: column; border: 1px solid rgba(216,173,88,.55); border-radius: var(--radius); background: var(--navy-950); }
+.solutions-grid { margin-top: 65px; display: grid; grid-template-columns: 1fr; gap: 18px; }
+.solution-primary { padding: 48px; display: grid; grid-template-columns: .78fr 1.22fr; gap: 64px; border: 1px solid rgba(216,173,88,.55); border-radius: var(--radius); background: var(--navy-950); }
 .solution-primary > div > span, .protection-head span { color: var(--gold); font-size: 12px; font-weight: 850; letter-spacing: .08em; }
 .solution-primary h3 { margin: 17px 0 0; font-size: 34px; line-height: 1.34; letter-spacing: -.04em; }
-.solution-primary ul { margin: 48px 0 30px; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.13); }
+.solution-primary ul { margin: 0 0 24px; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.13); }
 .solution-primary li { position: relative; padding: 16px 0 16px 21px; border-bottom: 1px solid rgba(255,255,255,.13); color: #d2dae4; font-size: 16px; }
 .solution-primary li::before { content: ""; position: absolute; left: 1px; top: 24px; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
-.solution-primary > p { margin: auto 0 0; color: #778aa1; font-size: 11px; }
-.protection-list { overflow: hidden; border-radius: var(--radius); background: var(--surface); color: var(--ink); }
-.protection-head { min-height: 104px; padding: 25px 29px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
-.protection-head strong { font-size: 20px; }
-.protection-list article { min-height: 93px; padding: 18px 29px; display: grid; grid-template-columns: 48px 1fr; align-items: center; gap: 17px; border-bottom: 1px solid var(--line); }
-.protection-list article:last-child { border-bottom: 0; }
-.protection-icon { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #d5c49f; color: #9e7428; font-size: 10px; font-weight: 850; }
-.protection-list h3 { margin: 0 0 2px; font-size: 20px; letter-spacing: -.025em; }
-.protection-list p { margin: 0; color: var(--muted); font-size: 15px; }
+.solution-details > p { margin: 0; color: #778aa1; font-size: 12px; }
+.protection-list { padding: 22px 28px; display: grid; grid-template-columns: minmax(230px,.7fr) 1.3fr; align-items: center; gap: 32px; border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); background: rgba(255,255,255,.035); }
+.protection-head { display: grid; gap: 6px; }
+.protection-head strong { color: #c5ced9; font-size: 15px; font-weight: 650; }
+.protection-items { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); }
+.protection-items span { min-height: 42px; display: flex; align-items: center; padding: 0 18px; border-left: 1px solid rgba(255,255,255,.12); color: #8f9db0; font-size: 13px; line-height: 1.4; }
 
 .contact { display: grid; grid-template-columns: .88fr 1.12fr; gap: 78px; align-items: start; }
 .advisor-copy { padding-top: 24px; }
@@ -167,10 +164,12 @@ form { margin-top: 34px; }
   .diagnosis-list article { grid-template-columns: 1fr; gap: 8px; padding: 25px 18px; }
   .solutions-inner { padding-top: 82px; padding-bottom: 82px; }
   .solutions-heading > p { margin-top: 10px; }
-  .solutions-grid { margin-top: 42px; grid-template-columns: 1fr; }
-  .solution-primary { padding: 28px 23px; } .solution-primary ul { margin-top: 35px; }
-  .protection-head { align-items: flex-start; flex-direction: column; justify-content: center; gap: 4px; }
-  .protection-list article { padding-inline: 22px; }
+  .solutions-grid { margin-top: 42px; }
+  .solution-primary { padding: 28px 23px; grid-template-columns: 1fr; gap: 34px; }
+  .protection-list { padding: 23px; grid-template-columns: 1fr; gap: 20px; }
+  .protection-items { grid-template-columns: repeat(2,minmax(0,1fr)); border-top: 1px solid rgba(255,255,255,.12); }
+  .protection-items span { min-height: 48px; padding: 0 12px; border-left: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .protection-items span:nth-child(even) { border-left: 1px solid rgba(255,255,255,.12); }
   .contact { grid-template-columns: 1fr; gap: 55px; } .advisor-copy { padding-top: 0; }
   .consultation-card { padding: 30px 21px; } .form-heading h2 { font-size: 35px; } .field-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
   .mobile-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-radius: 8px; background: var(--gold); color: var(--navy-950); box-shadow: 0 14px 32px rgba(6,20,38,.28); font-weight: 850; }
@@ -197,10 +196,10 @@ form { margin-top: 34px; }
 .solutions-heading > p,
 .solution-primary > div > span,
 .protection-head span,
+.protection-head strong,
 .solution-primary li,
-.solution-primary > p,
-.protection-icon,
-.protection-list p,
+.solution-details > p,
+.protection-items span,
 .advisor-lead,
 .advisor-points article > span,
 .advisor-points strong,
@@ -215,7 +214,7 @@ form { margin-top: 34px; }
 .form-status,
 .mobile-cta { font-size: 19px; }
 
-.solution-primary > p { color: #aebbc9; }
+.solution-details > p { color: #aebbc9; }
 
 @media (max-width: 767px) {
   .hero::before { width: 78vw; background-position: center 50%; opacity: .4; -webkit-mask-image: linear-gradient(90deg,transparent 0,rgba(0,0,0,.2) 4%,rgba(0,0,0,.64) 12%,#000 20%,#000 80%,rgba(0,0,0,.64) 88%,rgba(0,0,0,.2) 96%,transparent 100%); mask-image: linear-gradient(90deg,transparent 0,rgba(0,0,0,.2) 4%,rgba(0,0,0,.64) 12%,#000 20%,#000 80%,rgba(0,0,0,.64) 88%,rgba(0,0,0,.2) 96%,transparent 100%); }
