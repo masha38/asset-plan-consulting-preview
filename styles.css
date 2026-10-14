@@ -99,7 +99,6 @@ button, input, select { font: inherit; } button { color: inherit; }
 .solution-details > p { margin: 0; color: #778aa1; font-size: 12px; }
 .protection-list { padding: 22px 28px; display: grid; grid-template-columns: minmax(230px,.7fr) 1.3fr; align-items: center; gap: 32px; border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); background: rgba(255,255,255,.035); }
 .protection-head { display: grid; gap: 6px; }
-.protection-head strong { color: #c5ced9; font-size: 15px; font-weight: 650; }
 .protection-items { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); }
 .protection-items span { min-height: 42px; display: flex; align-items: center; padding: 0 18px; border-left: 1px solid rgba(255,255,255,.12); color: #8f9db0; font-size: 13px; line-height: 1.4; }
 
@@ -196,7 +195,6 @@ form { margin-top: 34px; }
 .solutions-heading > p,
 .solution-primary > div > span,
 .protection-head span,
-.protection-head strong,
 .solution-primary li,
 .solution-details > p,
 .protection-items span,
