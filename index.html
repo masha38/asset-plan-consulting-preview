@@ -23,8 +23,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./styles.css?v=20261113-1" />
-    <script src="./script.js?v=20261113-1" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20261015-1" />
+    <script src="./script.js?v=20261013-1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문 바로가기</a>
@@ -38,55 +38,18 @@
             <p class="hero-description">사업자금과 대표자 퇴직재원부터 상속·가업승계까지,<br class="desktop-break" /> 흩어진 금융 과제를 한 번에 점검합니다.</p>
             <div class="hero-actions"><a class="button button-gold" href="#consultation">무료 상담 신청 <span aria-hidden="true">→</span></a><a class="text-link" href="#diagnosis">컨설팅 내용 보기 <span aria-hidden="true">↓</span></a></div>
           </div>
-          <div class="hero-carousel" data-carousel aria-label="절세 전략 주요 안내" aria-roledescription="캐러셀">
-            <div class="carousel-stage">
-              <article class="promo-slide is-active" data-slide aria-hidden="false">
-                <img src="./assets/tax-seminar-income-plan.png" alt="국가 소득공제 제도를 활용한 월 500만원 추가 확보 세미나 안내" />
-                <div class="promo-caption">
-                  <span class="promo-kicker">OFFLINE SEMINAR · SEOUL &amp; BUSAN</span>
-                  <h2>절세 전략으로 만드는<br /><em>월 500만원 추가 현금흐름</em></h2>
-                  <p>소득공제 적용 가능성과 장기 재원 설계를 한 번에 점검합니다.</p>
-                  <a href="#consultation">무료 상담으로 먼저 확인 <span aria-hidden="true">→</span></a>
-                </div>
-              </article>
-              <article class="promo-slide" data-slide aria-hidden="true">
-                <img src="./assets/tax-investment-deduction.png" alt="창업투자조합 출자 등을 활용한 소득공제 예상 효과 안내" loading="lazy" />
-                <div class="promo-caption">
-                  <span class="promo-kicker">2026 TAX STRATEGY</span>
-                  <h2>창업투자조합 출자,<br /><em>절세와 장기 전략을 함께</em></h2>
-                  <p>조세특례제한법 제16조의 적용 요건과 예상 효과를 맞춤 검토합니다.</p>
-                  <a href="#consultation">내 상황에 맞는지 점검 <span aria-hidden="true">→</span></a>
-                </div>
-              </article>
+          <div class="diagnostic-card" aria-labelledby="quick-check-title">
+            <div class="diagnostic-head"><span class="live-dot" aria-hidden="true"></span><div><p>QUICK CHECK</p><h2 id="quick-check-title">지금 필요한 진단을 선택하세요</h2></div></div>
+            <div class="diagnostic-options" role="group" aria-label="관심 진단 영역">
+              <button type="button" class="diagnostic-option is-active" data-diagnostic="절세 컨설팅"><span>01</span><strong>절세 컨설팅</strong><i aria-hidden="true">✓</i></button>
+              <button type="button" class="diagnostic-option" data-diagnostic="대표자 퇴직재원"><span>02</span><strong>퇴직재원</strong><i aria-hidden="true">✓</i></button>
+              <button type="button" class="diagnostic-option" data-diagnostic="상속·가업승계"><span>03</span><strong>상속·승계</strong><i aria-hidden="true">✓</i></button>
+              <button type="button" class="diagnostic-option" data-diagnostic="퇴직(달러) 연금 상담"><span>04</span><strong>퇴직(달러) 연금 상담</strong><i aria-hidden="true">✓</i></button>
             </div>
-            <div class="carousel-toolbar">
-              <div class="carousel-dots" role="tablist" aria-label="배너 선택">
-                <button type="button" class="carousel-dot is-active" data-slide-to="0" role="tab" aria-selected="true" aria-label="첫 번째 배너"></button>
-                <button type="button" class="carousel-dot" data-slide-to="1" role="tab" aria-selected="false" aria-label="두 번째 배너"></button>
-              </div>
-              <div class="carousel-controls">
-                <button type="button" data-carousel-prev aria-label="이전 배너">←</button>
-                <span><strong data-carousel-current>01</strong> / 02</span>
-                <button type="button" data-carousel-next aria-label="다음 배너">→</button>
-              </div>
-            </div>
-            <p class="sr-only" data-carousel-status aria-live="polite">첫 번째 배너 표시 중</p>
+            <div class="diagnostic-result"><span>선택한 진단</span><strong data-diagnostic-result>절세 컨설팅</strong><a href="#consultation" data-diagnostic-link>상담 신청에 반영하기 <span aria-hidden="true">→</span></a></div>
           </div>
         </div>
         <div class="hero-foot"><p>사업 규모는 중요하지 않습니다.</p><strong>소규모 사업장과 개인사업자도 현재 상황에서 시작할 수 있습니다.</strong></div>
-      </section>
-
-      <section class="quick-check-section section-shell" aria-labelledby="quick-check-title">
-        <div class="diagnostic-card">
-          <div class="diagnostic-head"><span class="live-dot" aria-hidden="true"></span><div><p>QUICK CHECK</p><h2 id="quick-check-title">지금 필요한 진단을 선택하세요</h2></div></div>
-          <div class="diagnostic-options" role="group" aria-label="관심 진단 영역">
-            <button type="button" class="diagnostic-option is-active" data-diagnostic="절세 컨설팅"><span>01</span><strong>절세 컨설팅</strong><i aria-hidden="true">✓</i></button>
-            <button type="button" class="diagnostic-option" data-diagnostic="대표자 퇴직재원"><span>02</span><strong>퇴직재원</strong><i aria-hidden="true">✓</i></button>
-            <button type="button" class="diagnostic-option" data-diagnostic="상속·가업승계"><span>03</span><strong>상속·승계</strong><i aria-hidden="true">✓</i></button>
-            <button type="button" class="diagnostic-option" data-diagnostic="퇴직(달러) 연금 상담"><span>04</span><strong>퇴직(달러) 연금 상담</strong><i aria-hidden="true">✓</i></button>
-          </div>
-          <div class="diagnostic-result"><span>선택한 진단</span><strong data-diagnostic-result>절세 컨설팅</strong><a href="#consultation" data-diagnostic-link>상담 신청에 반영하기 <span aria-hidden="true">→</span></a></div>
-        </div>
       </section>
 
       <section class="diagnosis section-shell" id="diagnosis">
