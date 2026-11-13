@@ -10,6 +10,59 @@ const fields = ["name", "phone", "topic", "consent"];
 const company = document.querySelector("#company");
 const GOOGLE_SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyhWj0hdEYLbGQsG6S0zsatBuhTZA8Gyw-OVQmsPaWF0Zh95rrUTYDrzlUjhO29bCXPOQ/exec";
 
+const hero = document.querySelector(".hero");
+const heroRotator = document.querySelector("[data-hero-rotator]");
+
+if (hero && heroRotator) {
+  const heroCopy = hero.querySelector(".hero-copy");
+  const campaignMedia = hero.querySelector("[data-hero-campaign-media]");
+  const dots = [...heroRotator.querySelectorAll("[data-hero-slide-to]")];
+  const previousButton = heroRotator.querySelector("[data-hero-prev]");
+  const nextButton = heroRotator.querySelector("[data-hero-next]");
+  const liveStatus = heroRotator.querySelector("[data-hero-status]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeSlide = 0;
+  let rotationTimer;
+
+  function showHeroSlide(nextSlide, announce = true) {
+    activeSlide = (nextSlide + 2) % 2;
+    const campaignIsActive = activeSlide === 1;
+    hero.classList.toggle("is-campaign-active", campaignIsActive);
+    campaignMedia?.setAttribute("aria-hidden", String(!campaignIsActive));
+    heroCopy?.setAttribute("aria-hidden", String(campaignIsActive));
+    if (heroCopy) heroCopy.inert = campaignIsActive;
+    dots.forEach((dot, index) => {
+      const isActive = index === activeSlide;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-selected", String(isActive));
+      dot.tabIndex = isActive ? 0 : -1;
+    });
+    if (announce && liveStatus) liveStatus.textContent = `${activeSlide + 1}번째 배너 표시 중`;
+  }
+
+  function stopHeroRotation() {
+    window.clearInterval(rotationTimer);
+  }
+
+  function startHeroRotation() {
+    stopHeroRotation();
+    if (!reduceMotion && document.visibilityState === "visible") {
+      rotationTimer = window.setInterval(() => showHeroSlide(activeSlide + 1, false), 6500);
+    }
+  }
+
+  previousButton?.addEventListener("click", () => { showHeroSlide(activeSlide - 1); startHeroRotation(); });
+  nextButton?.addEventListener("click", () => { showHeroSlide(activeSlide + 1); startHeroRotation(); });
+  dots.forEach((dot) => dot.addEventListener("click", () => { showHeroSlide(Number(dot.dataset.heroSlideTo)); startHeroRotation(); }));
+  hero.addEventListener("mouseenter", stopHeroRotation);
+  hero.addEventListener("mouseleave", startHeroRotation);
+  hero.addEventListener("focusin", stopHeroRotation);
+  hero.addEventListener("focusout", (event) => { if (!hero.contains(event.relatedTarget)) startHeroRotation(); });
+  document.addEventListener("visibilitychange", () => document.hidden ? stopHeroRotation() : startHeroRotation());
+  showHeroSlide(0, false);
+  startHeroRotation();
+}
+
 // 회사명은 선택 항목입니다. 이전 페이지가 캐시되어도 필수 검증이 남지 않게 명시적으로 해제합니다.
 if (form) form.noValidate = true;
 if (company) {

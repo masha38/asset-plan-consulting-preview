@@ -23,14 +23,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./styles.css?v=20261015-1" />
-    <script src="./script.js?v=20261013-1" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20261113-2" />
+    <script src="./script.js?v=20261113-2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문 바로가기</a>
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-ornament ornament-one" aria-hidden="true"></div><div class="hero-ornament ornament-two" aria-hidden="true"></div>
+        <div class="hero-campaign-media" data-hero-campaign-media aria-hidden="true">
+          <img src="./assets/hero-tax-banner-draft-v7.png" alt="차별화된 국가 소득공제 제도와 4년 누적 예상 수익률을 안내하는 절세 전략 배너" />
+        </div>
         <div class="hero-inner">
           <div class="hero-copy">
             <p class="eyebrow">CEO FINANCIAL STRATEGY</p>
@@ -48,6 +51,15 @@
             </div>
             <div class="diagnostic-result"><span>선택한 진단</span><strong data-diagnostic-result>절세 컨설팅</strong><a href="#consultation" data-diagnostic-link>상담 신청에 반영하기 <span aria-hidden="true">→</span></a></div>
           </div>
+        </div>
+        <div class="hero-slide-controls" data-hero-rotator aria-label="메인 배너 선택">
+          <button type="button" data-hero-prev aria-label="이전 배너">←</button>
+          <div class="hero-slide-dots" role="tablist" aria-label="메인 배너">
+            <button type="button" class="is-active" data-hero-slide-to="0" role="tab" aria-selected="true" aria-label="기본 자산 전략 배너"></button>
+            <button type="button" data-hero-slide-to="1" role="tab" aria-selected="false" aria-label="국가 소득공제 제도 배너"></button>
+          </div>
+          <button type="button" data-hero-next aria-label="다음 배너">→</button>
+          <span class="sr-only" data-hero-status aria-live="polite">첫 번째 배너 표시 중</span>
         </div>
         <div class="hero-foot"><p>사업 규모는 중요하지 않습니다.</p><strong>소규모 사업장과 개인사업자도 현재 상황에서 시작할 수 있습니다.</strong></div>
       </section>
