@@ -10,6 +10,63 @@ const fields = ["name", "phone", "topic", "consent"];
 const company = document.querySelector("#company");
 const GOOGLE_SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyhWj0hdEYLbGQsG6S0zsatBuhTZA8Gyw-OVQmsPaWF0Zh95rrUTYDrzlUjhO29bCXPOQ/exec";
 
+const carousel = document.querySelector("[data-carousel]");
+
+if (carousel) {
+  const slides = [...carousel.querySelectorAll("[data-slide]")];
+  const dots = [...carousel.querySelectorAll("[data-slide-to]")];
+  const currentLabel = carousel.querySelector("[data-carousel-current]");
+  const liveStatus = carousel.querySelector("[data-carousel-status]");
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeIndex = 0;
+  let rotationTimer;
+
+  function showSlide(nextIndex, announce = true) {
+    activeIndex = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => {
+      const isActive = index === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+    dots.forEach((dot, index) => {
+      const isActive = index === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-selected", String(isActive));
+      dot.tabIndex = isActive ? 0 : -1;
+    });
+    if (currentLabel) currentLabel.textContent = String(activeIndex + 1).padStart(2, "0");
+    if (announce && liveStatus) liveStatus.textContent = `${activeIndex + 1}번째 배너 표시 중`;
+  }
+
+  function stopRotation() {
+    window.clearInterval(rotationTimer);
+  }
+
+  function startRotation() {
+    stopRotation();
+    if (!reduceMotion && document.visibilityState === "visible") {
+      rotationTimer = window.setInterval(() => showSlide(activeIndex + 1, false), 5500);
+    }
+  }
+
+  previousButton?.addEventListener("click", () => { showSlide(activeIndex - 1); startRotation(); });
+  nextButton?.addEventListener("click", () => { showSlide(activeIndex + 1); startRotation(); });
+  dots.forEach((dot) => dot.addEventListener("click", () => { showSlide(Number(dot.dataset.slideTo)); startRotation(); }));
+  carousel.addEventListener("mouseenter", stopRotation);
+  carousel.addEventListener("mouseleave", startRotation);
+  carousel.addEventListener("focusin", stopRotation);
+  carousel.addEventListener("focusout", (event) => { if (!carousel.contains(event.relatedTarget)) startRotation(); });
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") { event.preventDefault(); showSlide(activeIndex - 1); startRotation(); }
+    if (event.key === "ArrowRight") { event.preventDefault(); showSlide(activeIndex + 1); startRotation(); }
+  });
+  document.addEventListener("visibilitychange", () => document.hidden ? stopRotation() : startRotation());
+  showSlide(0, false);
+  startRotation();
+}
+
 // 회사명은 선택 항목입니다. 이전 페이지가 캐시되어도 필수 검증이 남지 않게 명시적으로 해제합니다.
 if (form) form.noValidate = true;
 if (company) {
